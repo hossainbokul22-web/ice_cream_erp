@@ -46,7 +46,7 @@ class _CreateProductionOrderScreenState extends ConsumerState<CreateProductionOr
               DropdownButtonFormField<int>(
                 value: selectedRecipeId,
                 decoration: const InputDecoration(labelText: 'Recipe সিলেক্ট করুন'),
-                items: recipes.map((r) => DropdownMenuItem(value: r.id, child: Text('${r.recipeCode} - ${r.recipeName}'))).toList(),
+                items: recipes.map((r) => DropdownMenuItem<int>(value: r.id, child: Text('${r.recipeCode} - ${r.recipeName}'))).toList(),
                 onChanged: (v) => setState(() => selectedRecipeId = v),
               ),
               const SizedBox(height: 12),
@@ -59,14 +59,14 @@ class _CreateProductionOrderScreenState extends ConsumerState<CreateProductionOr
               DropdownButtonFormField<int>(
                 value: selectedMixingTankId,
                 decoration: const InputDecoration(labelText: 'Mixing Tank'),
-                items: mixingTanks.map((t) => DropdownMenuItem(value: t.id, child: Text('${t.tankCode} (${t.capacityLiter}L)'))).toList(),
+                items: mixingTanks.map((t) => DropdownMenuItem<int>(value: t.id, child: Text('${t.tankCode} (${t.capacityLiter}L)'))).toList(),
                 onChanged: (v) => setState(() => selectedMixingTankId = v),
               ),
               const SizedBox(height: 12),
               DropdownButtonFormField<int>(
                 value: selectedAgingTankId,
                 decoration: const InputDecoration(labelText: 'Aging Tank'),
-                items: agingTanks.map((t) => DropdownMenuItem(value: t.id, child: Text('${t.tankCode} (${t.capacityLiter}L)'))).toList(),
+                items: agingTanks.map((t) => DropdownMenuItem<int>(value: t.id, child: Text('${t.tankCode} (${t.capacityLiter}L)'))).toList(),
                 onChanged: (v) => setState(() => selectedAgingTankId = v),
               ),
               const SizedBox(height: 24),

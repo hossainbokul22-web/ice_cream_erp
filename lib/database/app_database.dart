@@ -52,7 +52,7 @@ class AppDatabase extends _$AppDatabase {
   }
 
   // Available batches for an item (FEFO - First Expiry First Out)
-  Future<List<Batch>> getAvailableBatches(int itemId) {
+  Future<List<Batche>> getAvailableBatches(int itemId) {
     return (select(batches)
           ..where((b) => b.itemId.equals(itemId) & b.currentQty.isBiggerThanValue(0))
           ..orderBy([

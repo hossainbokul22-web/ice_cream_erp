@@ -1,7 +1,8 @@
-import 'package:drift/drift.dart';
+import 'package:drift/drift.dart' hide Column;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../providers/database_provider.dart';
+import '../../database/app_database.dart';
 
 class VoucherListScreen extends ConsumerWidget {
   const VoucherListScreen({super.key});
